@@ -2,7 +2,9 @@ const io = require("socket.io")(3000,{
     cors:{
         origin:['http://localhost:5173',
         'http://localhost:5174',
-        'http://localhost:5175'],
+        'http://localhost:5175',
+        'https://feedmore-ws-client.vercel.app/',
+        'https://feedmore-ws-admin.vercel.app/'],
     },
 })
 
