@@ -1,12 +1,24 @@
 const io = require("socket.io")(3000,{
     cors:{
-        origin:['http://localhost:5173'],
+        origin:['http://localhost:5173',
+        'http://localhost:5174',
+        'http://localhost:5175'],
     },
 })
 
+let adminId = ""
+
 io.on('connection',socket => {
-    console.log(socket.id)
-    socket.on("food-info",(data) => {
-        console.log(data)
+    socket.on("adminConnection",(msg)=>{
+        adminId = socket.id 
+        console.log(`Admin has connected with id :${adminId} and says ${msg}`)
     })
+    socket.on("clientConnection",(msg)=>{
+        console.log(`client has connected with id :${socket.id} and says ${msg}`)
+    })
+    socket.on("foodInfo",(data)=>{
+        console.log(`${{...data.name}} sent to server by ${socket.id}`)
+        socket.broadcast.to(adminId).emit("foodInfo",data)
+        console.log("data sent to admin")
+    })  
 })
