@@ -10,9 +10,6 @@ const io = require("socket.io")(3000, {
         'wss://feedmore-ws-admin.vercel.app/',
         'ws://feedmore-ws-client.vercel.app/',
       ],
-      methods: ["GET", "POST"],
-      allowedHeaders: ["my-custom-header"],
-      credentials: true,
     },
   });
   
