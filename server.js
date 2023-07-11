@@ -4,6 +4,7 @@ const io = require("socket.io")(3000,{
         'http://localhost:5174',
         'http://localhost:5175',
         'https://feedmore-ws-admin.vercel.app/',
+        'http://feedmore-ws-admin.vercel.app/',
         'ws://feedmore-ws-admin.vercel.app/',
         'wss://feedmore-ws-admin.vercel.app/',
         'ws://feedmore-ws-client.vercel.app/'],
