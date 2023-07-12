@@ -42,4 +42,8 @@ io.on("connection", (socket) => {
     socket.broadcast.to(adminId).emit("foodInfo", data);
     console.log("data sent to admin");
   });
+  socket.on("verified",(data)=>{
+    console.log(data)
+    socket.broadcast.to(data.clientID).emit("verified","donation done")
+  })
 });
