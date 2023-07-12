@@ -18,10 +18,9 @@ const io = require("socket.io")(3000, {
         "http://localhost:5174",
         "http://localhost:5175",
         "https://feedmore-ws-admin.vercel.app",
-        "http://feedmore-ws-admin.vercel.app",
-        "ws://feedmore-ws-admin.vercel.app",
         "wss://feedmore-ws-admin.vercel.app",
-        "ws://feedmore-ws-client.vercel.app",
+        "https://feedmore-ws-client.vercel.app",
+        "wss://feedmore-ws-client.vercel.app",
       ],
       methods: ["GET", "POST"], // Add allowed HTTP methods if needed
       allowedHeaders: ["Authorization"], // Add allowed headers if needed
